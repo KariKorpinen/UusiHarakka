@@ -10,11 +10,20 @@ package harakka.domain;
  */
 public class Viite {
     private int id;
+    private String tunnus;
     private String viitenimi;//title
     private String author;
     private String booktitle;
     private int vuosi;
 
+    public String getTunnus() {
+        return tunnus;
+    }
+    
+    public void setTunnus(String tunnus) {
+        this.tunnus = tunnus;
+    }
+    
     public String getAuthor() {
         return author;
     }
@@ -66,5 +75,12 @@ public class Viite {
     public static void setLASKURI(int LASKURI) {
         Viite.LASKURI = LASKURI;
     }
+    /*
+    public String toString () {
+        
+        return "@inproceedings{" + "}" ";
+    }
+    * 
+    */
     
 }

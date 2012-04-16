@@ -17,6 +17,7 @@
 
         <h2>Lisää viite</h2>
         <form action="lisaa" method="POST">
+            Tunnus <input type="text" name="tunnus"><br />
             Otsake: <input type="text" name="viitenimi"><br/>
             Tekijä: <input type="text" name="author"><br/>
             Kirjan nimi: <input type="text" name="booktitle"><br/>
@@ -27,6 +28,7 @@
         <h2>Viitteet</h2>
         <ul>
              <c:forEach var="viite" items="${viitteet}">
+                <li>Tunnus : ${viite.tunnus}</li>
                 <li>Otsake : ${viite.viitenimi} <a href="poista/${viite.id}">poista</a></li>
                 <li>Tekijä : ${viite.author} Kirjan nimi : ${viite.booktitle} vuosi : ${viite.vuosi}</li>
             </c:forEach>
