@@ -75,12 +75,14 @@ public class Viite {
     public static void setLASKURI(int LASKURI) {
         Viite.LASKURI = LASKURI;
     }
-    /*
+    @Override
     public String toString () {
-        
-        return "@inproceedings{" + "}" ";
+        return "@inproceedings{" + this.tunnus + ",\n"
+                + "author = {"+ this.author +"},\n"
+                + "title = {" + this.viitenimi + "},\n"
+                + "booktitle = {" + this.booktitle + "},\n"
+                + "year = {"+ this.vuosi +"},\n"
+                + "}";
     }
-    * 
-    */
     
 }
