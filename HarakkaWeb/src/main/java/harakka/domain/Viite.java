@@ -4,6 +4,9 @@
  */
 package harakka.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Kari Korpinen
@@ -14,6 +17,15 @@ public class Viite {
     private String viitenimi;//title
     private String author;
     private String booktitle;
+    private List<Viite> texMuodossa = new ArrayList();
+
+    public List<Viite> getTexMuodossa() {
+        return texMuodossa;
+    }
+
+    public void setTexMuodossa(List<Viite> texMuodossa) {
+        this.texMuodossa = texMuodossa;
+    }
     private int vuosi;
 
     public String getTunnus() {
@@ -75,6 +87,7 @@ public class Viite {
     public static void setLASKURI(int LASKURI) {
         Viite.LASKURI = LASKURI;
     }
+    
     @Override
     public String toString () {
         return "@inproceedings{" + this.tunnus + ",\n"

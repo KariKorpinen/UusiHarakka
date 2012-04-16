@@ -21,10 +21,13 @@ public class SimpleViitePalvelu implements ViitePalvelu {
 
     @Override
     public void lisaa(Viite viite) {
-
         viitteet.add(viite);
+        viite.setTexMuodossa(viitteet);
     }
-
+    public void tallennaBibTex(String tiedostonimi)
+    {
+        //viitteet
+    }
     @Override
     public List<Viite> listaa() {
         List<Viite> viite2 = new ArrayList();

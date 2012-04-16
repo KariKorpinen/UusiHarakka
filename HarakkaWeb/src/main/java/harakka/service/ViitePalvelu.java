@@ -15,4 +15,5 @@ public interface ViitePalvelu {
    public void lisaa(Viite viite);
    public List<Viite> listaa();
    public void poista(int viiteId);   
+   public void tallennaBibTex(String tiedostonimi);  
 }

@@ -24,6 +24,11 @@
             Vuosi: <input type="text" name="vuosi"><br/>
             <input type="submit" value="Lisää">            
         </form>
+         <h2>Lisää tiedostonimi</h2>
+        <form action="tiedosto" method="POST">
+            Tiedostonimi <input type="text" name="tiedostonimi"><br />
+            <input type="submit" value="Lisää">            
+        </form>
 
         <h2>Viitteet</h2>
         <ul>
@@ -31,6 +36,7 @@
                 <li>Tunnus : ${viite.tunnus}</li>
                 <li>Otsake : ${viite.viitenimi} <a href="poista/${viite.id}">poista</a></li>
                 <li>Tekijä : ${viite.author} Kirjan nimi : ${viite.booktitle} vuosi : ${viite.vuosi}</li>
+                <li>ToString : ${viite}</li>
             </c:forEach>
         </ul>
     </body>
