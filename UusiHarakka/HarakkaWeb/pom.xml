@@ -17,6 +17,7 @@
         <easyb.version>1.5</easyb.version>
         <slf4j.version>1.6.1</slf4j.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
     </properties>
 
     <dependencies>
@@ -89,6 +90,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
             <version>3.1.0.RELEASE</version>
+        </dependency>
+         <dependency>
+	  <groupId>com.lowagie</groupId>
+	  <artifactId>itext</artifactId>
+	  <version>2.1.7</version>
         </dependency>
     </dependencies>
 

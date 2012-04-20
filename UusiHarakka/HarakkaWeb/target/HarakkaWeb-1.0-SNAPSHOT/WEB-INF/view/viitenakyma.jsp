@@ -22,12 +22,17 @@
             Tekijä: <input type="text" name="author"><br/>
             Kirjan nimi: <input type="text" name="booktitle"><br/>
             Vuosi: <input type="text" name="vuosi"><br/>
-            <input type="submit" value="Lisää">            
+            <input type="submit" name="lisaaInput" value="Lisää">            
         </form>
-         <h2>Lisää tiedostonimi</h2>
+         <h2>BibTex muoto Lisää tiedostonimi</h2>
         <form action="tiedosto" method="POST">
-            Tiedostonimi <input type="text" name="tiedostonimi"><br />
-            <input type="submit" value="Lisää">            
+            Lisää tiedostopolku ja -nimi <input type="text" name="tiedostonimi"><br />
+            <input type="submit" value="Tallenna BibTex">            
+        </form>
+          <h2>Pdf muoto Lisää tiedostonimi</h2>
+        <form action="TallennaPdf" method="POST">
+            Lisää tiedostopolku ja -nimi <input type="text" name="tiedostonimiPdf"><br />
+            <input type="submit" value="TallennaPdf">            
         </form>
 
         <h2>Viitteet</h2>

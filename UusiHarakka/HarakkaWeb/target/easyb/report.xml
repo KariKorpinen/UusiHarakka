@@ -1,0 +1,13 @@
+<easyb time='Fri Apr 20 10:11:43 EEST 2012' totalbehaviors='1' totalfailedbehaviors='0' totalpendingbehaviors='0' executionTime='6637'>
+  <stories scenarios='1' failedscenarios='0' pendingscenarios='0' executionTime='6637'>
+    <story name='viitteenlisays' scenarios='1' failedscenarios='0' pendingscenarios='0' executionTime='6637'>
+      <description name='User can create a reference' />
+      <scenario name='creation successful' result='success' executionTime='5484'>
+        <given name='command add a reference is selected' result='success' />
+        <when name='article data entered' result='success' />
+        <then name='new reference has been registered to system' result='success' />
+      </scenario>
+    </story>
+  </stories>
+  <specifications specifications='0' failedspecifications='0' pendingspecifications='0' executionTime='0' />
+</easyb>

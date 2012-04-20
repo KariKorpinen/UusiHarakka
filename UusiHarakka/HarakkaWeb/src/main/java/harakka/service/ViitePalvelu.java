@@ -17,4 +17,5 @@ public interface ViitePalvelu {
    public void poista(int viiteId);   
    public void tallennaBibTex(String tiedostonimi);  
    public String aakkostarkistus(String tarkistaMerkkijono);
+   public void luoPdf(String tiedostonimiPdf);
 }

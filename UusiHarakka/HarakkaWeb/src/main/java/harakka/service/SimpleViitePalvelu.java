@@ -9,7 +9,16 @@ import harakka.domain.Viite;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import com.lowagie.text.Document;
+import com.lowagie.text.Font;
+import com.lowagie.text.FontFactory;
+import com.lowagie.text.PageSize;
+import com.lowagie.text.Paragraph;
+import com.lowagie.text.Chunk;
+import com.lowagie.text.pdf.*;
+import java.awt.Color;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 
 /**
@@ -99,4 +108,54 @@ public class SimpleViitePalvelu implements ViitePalvelu {
         return s;
         
     }
+    @Override
+   public void luoPdf(String tiedostonimiPdf)
+   {
+        //ViitePalvelu viitepalvelu2;
+        System.out.println("viitteet koko "+viitteet.size());
+       	try {
+                    List<Viite> viite3 = new ArrayList();
+                    viite3=viitteet;
+                    String tallenna=" ";
+                    //viite3.
+                   
+                    //viite3.toArray()[4].toString();
+			Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(tiedostonimiPdf));
+                              //  + "//C:\\AbciTextTest.pdf"));
+                        System.out.println(tiedostonimiPdf);
+            document.open();
+
+            // create a chunk object using chunk class of itext library.
+			Chunk underlined = new Chunk("Tämä on testi pdf tiedosto tekijänä Harakka: ");
+
+			// set the distance between text and line.
+			underlined.setTextRise(8.0f);
+
+			// set the width of the line, 'y' position, color and design of the line
+			underlined.setUnderline(new Color(0x00, 0x00, 0xFF),0.0f, 0.2f, 3.0f, 0.0f,PdfContentByte.LINE_CAP_PROJECTING_SQUARE);
+
+			// finally add object to the document.
+			document.add(underlined);
+                        for(int koko=0;koko<viitteet.size();koko++)
+                        {
+                            tallenna="";
+                            
+                           // tallenna=viitteet.toString();
+            //document.add(new Paragraph(tallenna,FontFactory.getFont(FontFactory.COURIER, 14, Font.BOLD, new Color(255, 150, 200))));;
+                           tallenna=viite3.get(koko).getTunnus()+" "+viite3.get(koko).getViitenimi()+" "+viite3.get(koko).getAuthor()+" "+viite3.get(koko).getBooktitle()+" "+Integer.toString(viite3.get(koko).getVuosi());
+                          //  tallenna=viite3.get(koko).getTunnus()+viite3.get(koko).getViitenimi()+viite3.get(koko).getAuthor()+viite3.get(koko).getBooktitle()+Integer.toString(viite3.get(koko).getVuosi());
+            document.add(new Paragraph(tallenna,FontFactory.getFont(FontFactory.COURIER, 14, Font.BOLD, new Color(255, 150, 200))));;
+            // document.add(new Paragraph("Mahendra Singh",
+            //FontFactory.getFont(FontFactory.COURIER, 14, Font.BOLD, new Color(255, 150, 200))));;
+                        }		
+            document.close();
+                        System.out.println("dokumentti suljettu");
+                        writer.close();
+		} 
+		catch (Exception e2) {
+			System.out.println(e2.getMessage());
+		}
+       
+   }
 }

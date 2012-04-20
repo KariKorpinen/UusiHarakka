@@ -58,5 +58,13 @@ public class ViiteController {
        model.addAttribute("viitteet", viitepalvelu.listaa());
        return "viitenakyma";
     }
+    @RequestMapping(value = "TallennaPdf")
+    public String pdfTallenna(@RequestParam String tiedostonimiPdf,Model model){  
+      // viitepalvelu.luePdf();
+       System.out.println("controller pdf luku ");
+       model.addAttribute("viitteet", viitepalvelu.listaa());
+       viitepalvelu.luoPdf(tiedostonimiPdf);
+       return "viitenakyma";
+    }
     
 }
